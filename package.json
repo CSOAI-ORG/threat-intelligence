@@ -1,0 +1,39 @@
+{
+  "name": "@csgaglobal/threat-intelligence",
+  "version": "1.0.0",
+  "description": "Threat intelligence platform for IOC management, threat feed aggregation, and cyber threat analysis.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "threat-intelligence-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "license": "CC0-1.0",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "author": "CSGA Global",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csga-global/mcp-servers",
+    "directory": "packages/threat-intelligence"
+  },
+  "keywords": [
+    "mcp",
+    "threat-intelligence",
+    "cybersecurity",
+    "ioc",
+    "cti"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
