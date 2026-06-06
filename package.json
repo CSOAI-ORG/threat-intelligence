@@ -1,39 +1,37 @@
 {
-  "name": "@csgaglobal/threat-intelligence",
-  "version": "1.0.0",
-  "description": "Threat intelligence platform for IOC management, threat feed aggregation, and cyber threat analysis.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "bin": {
-    "threat-intelligence-mcp": "dist/index.js"
-  },
-  "files": [
-    "dist",
-    "LICENSE"
-  ],
-  "license": "CC0-1.0",
-  "type": "module",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.6.1",
-    "zod": "^3.24.1"
-  },
-  "devDependencies": {
-    "typescript": "^5.7.3"
-  },
-  "author": "CSGA Global",
+  "name": "@meok-ai-labs/threat-intelligence-mcp",
+  "version": "0.1.0",
+  "description": "MCP server correlating NVD, OSV.dev, and GitHub Security Advisories to endpoint and package inventories.",
+  "license": "Apache-2.0",
+  "author": "MEOK AI Labs",
+  "homepage": "https://github.com/CSOAI-ORG/threat-intelligence#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/csga-global/mcp-servers",
-    "directory": "packages/threat-intelligence"
+    "url": "git+https://github.com/CSOAI-ORG/threat-intelligence.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CSOAI-ORG/threat-intelligence/issues"
   },
   "keywords": [
     "mcp",
+    "model-context-protocol",
+    "cve",
+    "nvd",
+    "osv",
+    "ghsa",
     "threat-intelligence",
-    "cybersecurity",
-    "ioc",
-    "cti"
+    "vulnerability",
+    "meok",
+    "meok-ai-labs"
   ],
   "engines": {
-    "node": ">=18.0.0"
+    "python": ">=3.10"
+  },
+  "mcp": {
+    "name": "threat-intelligence-mcp",
+    "transport": "stdio",
+    "entry": "server:main",
+    "image": "ghcr.io/csoai-org/threat-intelligence-mcp:latest",
+    "pypi": "threat-intelligence-mcp"
   }
 }

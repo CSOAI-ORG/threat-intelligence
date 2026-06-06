@@ -1,0 +1,26 @@
+{
+  "schema": "https://schema.smithery.ai/server-card.json",
+  "name": "threat-intelligence-mcp",
+  "version": "0.1.0",
+  "description": "MCP server correlating NVD, OSV.dev, and GitHub Security Advisories to endpoint and package inventories. Pure Python; no native deps.",
+  "vendor": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/threat-intelligence",
+  "license": "Apache-2.0",
+  "categories": ["security", "threat-intelligence", "vulnerability-management"],
+  "tags": ["cve", "nvd", "osv", "ghsa", "kev", "epss", "meok"],
+  "tools": [
+    {"name": "cve_lookup", "description": "Look up a CVE by ID from the NVD"},
+    {"name": "match_endpoints_to_cves", "description": "Correlate endpoints + packages to CVEs across NVD/OSV/GHSA"},
+    {"name": "severity_routing", "description": "Prioritise CVE remediation using CVSS+KEV+EPSS"},
+    {"name": "cve_list_recent", "description": "List recent CVEs by severity + window"}
+  ],
+  "transports": ["stdio", "streamable-http"],
+  "deployment": {
+    "image": "ghcr.io/csoai-org/threat-intelligence-mcp:latest",
+    "pypi": "threat-intelligence-mcp"
+  }
+}

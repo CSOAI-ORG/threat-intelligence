@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "CSOAI-ORG/threat-intelligence-mcp",
+  "version": "0.1.0",
+  "description": "Threat Intelligence MCP Server by MEOK AI Labs — correlate NVD/OSV/GHSA to endpoints and packages.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/threat-intelligence",
+    "source": "https://github.com/CSOAI-ORG/threat-intelligence"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "threat-intelligence-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

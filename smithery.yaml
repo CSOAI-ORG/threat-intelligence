@@ -1,0 +1,44 @@
+name: threat-intelligence-mcp
+description: MCP server for threat intelligence. Correlate NVD, OSV.dev, and GitHub Security Advisories to endpoints and packages. From MEOK AI Labs.
+version: 0.1.0
+license: Apache-2.0
+author: MEOK AI Labs
+homepage: https://github.com/CSOAI-ORG/threat-intelligence
+repository: https://github.com/CSOAI-ORG/threat-intelligence
+tools:
+- name: cve_lookup
+  description: Look up a single CVE by ID (e.g. CVE-2024-3094) from the NVD. Returns CVSS v3 base score, references, descriptions, and published/modified timestamps.
+  parameters:
+  - name: cve_id
+    type: string
+    required: true
+- name: match_endpoints_to_cves
+  description: Given an endpoint list (and optional ecosystem packages), return matching CVEs from NVD, OSV, and GHSA, plus a unified findings list sorted by severity.
+  parameters:
+  - name: endpoints
+    type: array
+    required: true
+  - name: packages
+    type: array
+    required: false
+  - name: cpe_keywords
+    type: array
+    required: false
+- name: severity_routing
+  description: Order a list of CVE IDs by remediation priority using CVSS (NVD), CISA KEV membership, and EPSS score. Returns routing decisions (patch_now / patch_soon / patch_later / unknown).
+  parameters:
+  - name: cve_ids
+    type: array
+    required: true
+- name: cve_list_recent
+  description: List recent CVEs from the NVD by minimum severity (LOW/MEDIUM/HIGH/CRITICAL) over a 1..120 day window, with optional keyword filter.
+  parameters:
+  - name: severity
+    type: string
+    required: false
+  - name: days
+    type: number
+    required: false
+  - name: keyword
+    type: string
+    required: false
